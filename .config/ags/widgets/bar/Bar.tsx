@@ -3,6 +3,7 @@ import TimePanel from './Time'
 import LWBPanel from './LWBPanel'
 import WorkspacesPanel from './WorkspacesPanel'
 import CurrentAppPanel from './CurrentAppPanel'
+import TimeUntilDeathPanel from './TimeUntilDeathPanel'
 
 export default function Bar(gdkmonitor: Gdk.Monitor) {
   const { TOP, LEFT, RIGHT } = Astal.WindowAnchor
@@ -25,7 +26,8 @@ export default function Bar(gdkmonitor: Gdk.Monitor) {
         <box>
           <CurrentAppPanel />
         </box>
-        <box>
+        <box spacing={5}>
+          <TimeUntilDeathPanel />
           <LWBPanel />
         </box>
       </centerbox>
