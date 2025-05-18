@@ -1,0 +1,12 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Type = Package
+Target= *
+
+[Action]
+Description = Updating package list gist
+Depends = github-cli
+When = PostTransaction
+Exec=/home/mgik/.scripts/pacman/gist.sh

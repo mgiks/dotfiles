@@ -16,6 +16,10 @@ alias grep='grep --color=auto'
 alias fzf='fzf --no-color'
 alias ll='ls -l'
 alias wifi='nmcli device wifi rescan && nmcli device wifi'
+alias pacman='pacman --config ~/.pacman.conf'
+alias yay='yay --config ~/.pacman.conf'
+# Needed to make bash resolve aliases after the first one
+alias sudo='sudo '
 chrome='google-chrome-stable'
 
 bind -x '"\C-f":"fproj"'
