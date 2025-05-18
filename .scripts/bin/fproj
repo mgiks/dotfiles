@@ -1,0 +1,10 @@
+#! /usr/bin/env bash
+set -euo pipefail
+
+projects="/home/mgik/Projects"
+chosen_project="$(fd -d=1 . "$projects" | fzf --no-color)"
+echo $chosen_project
+
+if [[ -n chosen_project ]]; then
+    tmux new-session -c $chosen_project
+fi
