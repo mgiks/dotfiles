@@ -1,0 +1,3 @@
+[submodule "/home/mgik/.config/ags"]
+	path = /home/mgik/.config/ags
+	url = git@github.com:mgiks/ags-widgets.git
