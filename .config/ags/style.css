@@ -44,21 +44,7 @@ centerbox {
   color: white;
 }
 
-.current-app-container {
-  background-color: transparent;
-  border: 2px solid white;
-  border-radius: 15px;
-  padding: 2px 8px;
-}
-
-.time-container {
-  background-color: transparent;
-  border: 2px solid white;
-  border-radius: 15px;
-  padding: 2px 8px;
-}
-
-.lwb-container {
+.container {
   background-color: transparent;
   border: 2px solid white;
   border-radius: 15px;

@@ -21,7 +21,7 @@ function TimeUntilDeathPanel() {
       spacing={8}
       valign={Gtk.Align.CENTER}
       halign={Gtk.Align.CENTER}
-      cssClasses={['time-container']}
+      cssClasses={['container']}
     >
       <box spacing={3}>
         <image iconName='skull' />

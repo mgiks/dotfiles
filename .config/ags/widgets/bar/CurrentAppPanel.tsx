@@ -30,7 +30,7 @@ function CurrentAppPanel() {
   })
 
   return (
-    <box cssClasses={['current-app-container']}>
+    <box cssClasses={['container']}>
       <label cssClasses={['red-symbol']}>
         󰣇
       </label>
