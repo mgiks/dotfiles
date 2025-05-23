@@ -6,6 +6,8 @@
 [[ $- != *i* ]] && return
 PS1='[\u@\h \W]\$ '
 
+. /home/mgik/.cache/wal/colors.sh
+
 export TZ='Asia/Bishkek'
 export PATH=$PATH:$HOME/.scripts/bin
 export CDPATH=:$HOME/:$HOME/Projects/:$HOME/.config/:..
@@ -13,14 +15,20 @@ export GOPATH=$HOME/.go
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias fzf='fzf --no-color'
+# alias fzf='fzf --no-color'
 alias ll='ls -l'
 alias wifi='nmcli device wifi rescan && nmcli device wifi'
 alias pacman='pacman --config ~/.pacman.conf'
 alias yay='yay --config ~/.pacman.conf'
+alias y='yay -S'
 # Needed to make bash resolve aliases after the first one
 alias sudo='sudo '
-chrome='google-chrome-stable'
+alias chrome='google-chrome-stable '
+alias s='sudo pacman -S '
+
+if command -v tmux &>/dev/null && [[ -n "$PS1" ]] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [[ -z "$TMUX" ]] && [[ "$XDG_SESSION_TYPE" = 'wayland' ]]; then
+    exec tmux
+fi
 
 bind -x '"\C-f":"fproj"'
 

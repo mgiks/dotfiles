@@ -1,8 +1,7 @@
 local theme = function()
 	local colors = {
-		white = "#ffffff",
-		red = "#FF0000",
-		black = "#000000",
+		white = "#c0c0c0",
+		red = "#C10000",
 		darkgray = "#16161d",
 		gray = "#727169",
 		transparent = " ",

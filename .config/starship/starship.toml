@@ -9,8 +9,8 @@ truncation_length = 1
 style = 'bold white'
 
 [character] 
-success_symbol = '[➜](bold red) '
-error_symbol = '[✗](bold white) '
+success_symbol = '[➜](#c10000) '
+error_symbol = '[✗](#c0c0c0) '
 
 # Disable the package module, hiding it from the prompt completely
 [package]
