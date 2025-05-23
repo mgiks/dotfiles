@@ -1,6 +1,4 @@
 #! /usr/bin/env bash
-set -euo pipefail
-
 source $(dirname "$0")/.gh_token
 
 if [ -z "${GH_TOKEN:-}" ]; then
@@ -12,7 +10,7 @@ echo Checking whether pacman-packages gist exists...
 pacman_packages_gist=$(gh gist list | grep pacman-packages | head -n1 | awk '{ print $1 }')
 file='pacman-packages'
 
-if [ -z $pacman_packages_gist ]; then
+if [ -z ${pacman_packages_gist:-} ]; then
     touch $file
 
     pacman -Qe | awk '{ print $1 }' >$file

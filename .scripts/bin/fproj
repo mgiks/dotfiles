@@ -2,15 +2,20 @@
 set -euo pipefail
 
 session_name="$(tmux display-message -p '#S')"
-echo $session_name
 projects_folder="/home/mgik/Projects"
 projects=$(fd -d=1 . "$projects_folder")
 projects_subfolders=$(fd --exact-depth=2 . "$projects_folder" -t=d)
 chosen_project="$(
     ls -d $projects $projects_subfolders |
-        fzf --layout=reverse \
+        fzf --info='right' \
+            --layout=reverse \
+            --border-label='Find your project' \
+            --border-label-pos='0' \
             --bind 'ctrl-f:preview-half-page-down,ctrl-b:preview-half-page-up' \
-            --preview 'tree -L 2 --noreport {}'
+            --preview-window="border-rounded" \
+            --pointer="◆" \
+            --preview 'exa -T -L=2 --git-ignore --color=always \
+            --group-directories-first --icons {}'
 )"
 chosen_project_subfolders=($(ls -d $projects_subfolders | grep "$chosen_project"))
 
