@@ -29,7 +29,7 @@ alias y='yay -S '
 # Needed to make bash resolve aliases after the first one
 alias sudo='sudo '
 alias chrome='google-chrome-stable '
-alias s='sudo pacman -S '
+alias i='sudo pacman -S '
 
 set -o vi
 
