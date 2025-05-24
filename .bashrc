@@ -16,11 +16,12 @@ export FZF_DEFAULT_OPTS="
     --color info:7,prompt:2,spinner:1,pointer:232,marker:1
 "
 
-alias fzf='fzf --no-color'
+alias wa="/home/mgik/.scripts/wal/wal.sh"
+alias wiki='wiki-tui '
 alias grep='grep --color=always '
 alias ls='exa --color=always --icons '
 alias ll='ls -l '
-alias tree='ls -T --group-directories-first'
+alias tree='ls -T --group-directories-first '
 alias wifi='nmcli device wifi rescan && nmcli device wifi '
 alias pacman='pacman --config ~/.pacman.conf '
 alias yay='yay --config ~/.pacman.conf '
@@ -30,8 +31,10 @@ alias sudo='sudo '
 alias chrome='google-chrome-stable '
 alias s='sudo pacman -S '
 
-if command -v tmux &>/dev/null && [[ -n "$PS1" ]] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [[ -z "$TMUX" ]] && [[ "$XDG_SESSION_TYPE" = 'wayland' ]]; then
-    exec tmux
+set -o vi
+
+if [[ -x "$(command -v tmux)" ]] && [[ -n "${DISPLAY}" ]] && [[ -z "${TMUX}" ]]; then
+    exec tmux new >/dev/null 2>&1
 fi
 
 bind -x '"\C-f":"fproj"'

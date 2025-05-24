@@ -5,6 +5,5 @@ require("mgik.utils")
 require("mgik.autocommands")
 require("mgik.lazy")
 
-vim.o.background = "dark"
-vim.cmd.colorscheme("gruvbox-material")
-vim.cmd.colorscheme()
+-- vim.o.background = "dark"
+-- vim.cmd.colorscheme("gruvbox-material")

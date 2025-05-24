@@ -11,7 +11,7 @@ local function set_ghost_text_color()
 end
 
 local function set_current_line_number_color()
-	set_hl(0, "CursorLineNr", { fg = "#c2c2c2" })
+	set_hl(0, "CursorLineNr", { fg = "white" })
 end
 
 local highlight_groups_to_transparent = {
@@ -32,4 +32,5 @@ function Set_colors()
 	set_transparent(highlight_groups_to_transparent)
 	set_ghost_text_color()
 	set_current_line_number_color()
+	set_hl(0, "BlinkCmpMenuSelection", { bg = "#4d4d4d" })
 end
