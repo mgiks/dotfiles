@@ -26,6 +26,7 @@ alias wifi='nmcli device wifi rescan && nmcli device wifi '
 alias pacman='pacman --config ~/.pacman.conf '
 alias yay='yay --config ~/.pacman.conf '
 alias y='yay -S '
+alias yadd='yadm list | xargs yadm add '
 # Needed to make bash resolve aliases after the first one
 alias sudo='sudo '
 alias chrome='google-chrome-stable '
