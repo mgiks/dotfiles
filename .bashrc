@@ -33,8 +33,11 @@ alias i='sudo pacman -S '
 
 set -o vi
 
+workspace_id="_$(hyprctl activeworkspace | grep ID | head -1 | awk '{ print $3}')"
+session_name="$USER$workspace_id"
+
 if [[ -x "$(command -v tmux)" ]] && [[ -n "${DISPLAY}" ]] && [[ -z "${TMUX}" ]]; then
-    exec tmux new >/dev/null 2>&1
+    exec tmux new -A -s "$session_name" >/dev/null 2>&1
 fi
 
 bind -x '"\C-f":"fproj"'
