@@ -2,10 +2,15 @@
 config_directory="$1"
 config_path="$XDG_CONFIG_HOME/$config_directory"
 
-if [[ $config_directory == "sc" ]]; then
+if [[ $config_directory == "sc" ]] || [[ $config_directory == "scripts" ]]; then
     config_path="$HOME/.scripts"
 fi
 
-cd "$config_path"
-nvim "$config_path"
-cd -
+if [[ -d $config_path ]]; then
+    cd "$config_path"
+    nvim "$config_path"
+    cd -
+else
+    echo "Failed to find directory"
+    exit 1
+fi
