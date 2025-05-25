@@ -1,9 +1,11 @@
 #! /usr/bin/env bash
 config_directory="$1"
-config_path="$HOME/.config/$config_directory"
+config_path="$XDG_CONFIG_HOME/$config_directory"
 
-if [[ $config_directory == "scripts" ]]; then
+if [[ $config_directory == "sc" ]]; then
     config_path="$HOME/.scripts"
 fi
 
+cd "$config_path"
 nvim "$config_path"
+cd -
