@@ -7,7 +7,7 @@
 PS1='[\u@\h \W]\$ '
 
 export TZ='Asia/Bishkek'
-export PATH=$PATH:$HOME/.scripts/bin
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH:$HOME/.scripts/bin"
 export CDPATH=:$HOME/:$HOME/Projects/:$HOME/.config/:..
 export GOPATH=$HOME/.go
 export FZF_DEFAULT_OPTS="
@@ -16,7 +16,8 @@ export FZF_DEFAULT_OPTS="
     --color info:7,prompt:2,spinner:1,pointer:232,marker:1
 "
 
-alias wa="/home/mgik/.scripts/wal/wal.sh"
+alias wa='/home/mgik/.scripts/wal/wal.sh '
+alias rmpc='rmpc update; rmpc '
 alias wiki='wiki-tui '
 alias grep='grep --color=always '
 alias ls='exa --color=always --icons '
@@ -44,5 +45,7 @@ fi
 bind -x '"\C-f":"fproj"'
 
 sleep 0.1 && fastfetch
+
+. <(asdf completion bash)
 
 eval "$(starship init bash)"
