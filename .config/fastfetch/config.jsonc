@@ -2,7 +2,7 @@
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
     "type": "kitty-icat",
-    "color": { "1": "light_red", "2": "light_red" },
+    "color": { "1": "#c10000", "2": "#c10000" },
     "source": "~/.config/fastfetch/batman-logo.png"
   },
   "display": {
@@ -13,9 +13,9 @@
     {
       "type": "title",
       "color": {
-        "user": "light_red",
-        "at": "light_white",
-        "host": "light_red"
+        "user": "#c10000",
+        "at": "#c0c0c0",
+        "host": "#c10000"
       }
     },
     {
@@ -26,56 +26,56 @@
       "type": "os",
       "key": " ",
       "format": "{pretty-name}",
-      "keyColor": "light_red",
-      "outputColor": "light_white"
+      "keyColor": "#c10000",
+      "outputColor": "#c0c0c0"
     },
     {
       "type": "datetime",
       "format": "{year}-{month-pretty}-{day-pretty}",
       "key": " ",
-      "keyColor": "light_red",
-      "outputColor": "light_white"
+      "keyColor": "#c10000",
+      "outputColor": "#c0c0c0"
     },
     {
       "type": "uptime",
       "key": "󰥔 ",
-      "keyColor": "light_red",
-      "outputColor": "light_white"
+      "keyColor": "#c10000",
+      "outputColor": "#c0c0c0"
     },
     {
       "type": "disk",
       "format": "{size-used} / {size-total}",
       "key": " ",
-      "keyColor": "light_red",
-      "outputColor": "light_white"
+      "keyColor": "#c10000",
+      "outputColor": "#c0c0c0"
     },
     {
       "type": "memory",
-      "keyColor": "light_red",
+      "keyColor": "#c10000",
       "key": " ",
-      "outputColor": "light_white",
+      "outputColor": "#c0c0c0",
       "format": "{used} / {total}"
     },
     {
       "type": "shell",
       "format": "{pretty-name}",
       "key": " ",
-      "keyColor": "light_red",
-      "outputColor": "light_white"
+      "keyColor": "#c10000",
+      "outputColor": "#c0c0c0"
     },
     {
       "type": "terminal",
       "format": "{pretty-name}",
       "key": " ",
-      "keyColor": "light_red",
-      "outputColor": "light_white"
+      "keyColor": "#c10000",
+      "outputColor": "#c0c0c0"
     },
     {
       "type": "editor",
       "key": " ",
       "format": "{name}",
-      "keyColor": "light_red",
-      "outputColor": "light_white"
+      "keyColor": "#c10000",
+      "outputColor": "#c0c0c0"
     }
   ]
 }
