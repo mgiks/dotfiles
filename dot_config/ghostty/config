@@ -1,0 +1,11 @@
+font-family = "Jet Brains Mono NF Bold"
+font-size = 12
+theme = "/home/mgik/.cache/wal/ghostty.conf"
+mouse-hide-while-typing = true
+background-opacity = 0.55
+title = "ghostty"
+window-decoration = server
+window-padding-x = 0
+window-padding-y = 0
+window-padding-balance = true
+keybind = ctrl+t=toggle_window_decorations

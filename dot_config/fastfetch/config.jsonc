@@ -1,0 +1,81 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "kitty-icat",
+    "color": { "1": "#c10000", "2": "#c10000" },
+    "source": "~/.config/fastfetch/batman-logo.png"
+  },
+  "display": {
+    "separator": " ➜  "
+  },
+  "modules": [
+    { "type": "break" },
+    {
+      "type": "title",
+      "color": {
+        "user": "#c10000",
+        "at": "#c0c0c0",
+        "host": "#c10000"
+      }
+    },
+    {
+      "type": "separator",
+      "string": "󰇘 "
+    },
+    {
+      "type": "os",
+      "key": " ",
+      "format": "{pretty-name}",
+      "keyColor": "#c10000",
+      "outputColor": "#c0c0c0"
+    },
+    {
+      "type": "datetime",
+      "format": "{year}-{month-pretty}-{day-pretty}",
+      "key": " ",
+      "keyColor": "#c10000",
+      "outputColor": "#c0c0c0"
+    },
+    {
+      "type": "uptime",
+      "key": "󰥔 ",
+      "keyColor": "#c10000",
+      "outputColor": "#c0c0c0"
+    },
+    {
+      "type": "disk",
+      "format": "{size-used} / {size-total}",
+      "key": " ",
+      "keyColor": "#c10000",
+      "outputColor": "#c0c0c0"
+    },
+    {
+      "type": "memory",
+      "keyColor": "#c10000",
+      "key": " ",
+      "outputColor": "#c0c0c0",
+      "format": "{used} / {total}"
+    },
+    {
+      "type": "shell",
+      "format": "{pretty-name}",
+      "key": " ",
+      "keyColor": "#c10000",
+      "outputColor": "#c0c0c0"
+    },
+    {
+      "type": "terminal",
+      "format": "{pretty-name}",
+      "key": " ",
+      "keyColor": "#c10000",
+      "outputColor": "#c0c0c0"
+    },
+    {
+      "type": "editor",
+      "key": " ",
+      "format": "{name}",
+      "keyColor": "#c10000",
+      "outputColor": "#c0c0c0"
+    }
+  ]
+}
