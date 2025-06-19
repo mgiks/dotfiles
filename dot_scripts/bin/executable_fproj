@@ -1,0 +1,44 @@
+#! /usr/bin/env bash
+set -euo pipefail
+
+DEPTH=2
+
+session_name="$(tmux display-message -p '#S')"
+projects_folder="/home/mgik/Projects"
+projects=$(fd -d=1 . "$projects_folder")
+projects_subfolders=$(fd --exact-depth=$DEPTH . "$projects_folder" -t=d)
+chosen_project="$(
+    ls -d $projects $projects_subfolders |
+        fzf --info='right' \
+            --layout=reverse \
+            --border-label='Find your project' \
+            --border-label-pos='0' \
+            --bind 'ctrl-f:preview-half-page-down,ctrl-b:preview-half-page-up' \
+            --preview-window="border-rounded" \
+            --pointer="◆" \
+            --preview 'exa -T -L=2 --git-ignore --color=always \
+            --group-directories-first --icons {}'
+)"
+chosen_project_subfolders=($(ls -d $projects_subfolders | grep "$chosen_project"))
+
+if [[ "${TMUX:-}" = "" ]]; then
+    tmux
+    exit 0
+fi
+
+if ((${#chosen_project_subfolders[@]})); then
+    for folder in ${chosen_project_subfolders[@]}; do
+        cd "$folder"
+        tmux neww nvim . \; selectw -t -n \; splitw -h \; selectp -t 1
+    done
+    # Needed to prevent project's subfolder from triggering killing a window
+    if ((${#chosen_project_subfolders[@]} > 1)); then
+        while [[ $(tmux list-windows -t $session_name | wc -l) -gt 2 ]]; do
+            tmux killw -t 1
+        done
+    fi
+    exit 0
+fi
+
+cd "$chosen_project"
+tmux neww nvim . \; selectw -t -n \; splitw -h \; selectp -t 1

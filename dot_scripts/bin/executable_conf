@@ -1,0 +1,9 @@
+#! /usr/bin/env bash
+config_directory="$1"
+config_path="$XDG_CONFIG_HOME/$config_directory"
+
+if [[ -d $config_path ]]; then
+    cd "$config_path" || echo "Failed to find directory" exit 1
+    nvim "$config_path"
+    cd - || exit 1
+fi
