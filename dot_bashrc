@@ -31,9 +31,9 @@ alias yadd='yadm list | xargs yadm add '
 # Needed to make bash resolve aliases after the first one
 alias sudo='sudo '
 alias chrome='google-chrome-stable '
-alias i='sudo pacman -S '
+alias i='yay -S'
 alias rp='sudo pacman -Runs '
-alias q='pacman -Si '
+alias q='yay -Si'
 
 set -o vi
 
