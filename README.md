@@ -12,11 +12,12 @@ These are my personal **dotfiles**, managed with [chezmoi](https://www.chezmoi.i
 2. **Initialize with this repo**:
    ```sh
    chezmoi init https://github.com/mgiks/dotfiles
+   ```
 3. **Check what changes chezmoi will apply**:
    ```sh
    chezmoi diff
    ```
-4. **Adjust changes (optional)**:
+4. **Adjust the changes (optional)**:
    - Edit the file manually:
      ```sh
      chezmoi edit $FILE
