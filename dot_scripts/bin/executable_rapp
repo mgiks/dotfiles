@@ -1,6 +1,0 @@
-#! /usr/bin/env bash
-set -euo pipefail
-
-appname="$1"
-
-exec uwsm app -- "$appname" &
