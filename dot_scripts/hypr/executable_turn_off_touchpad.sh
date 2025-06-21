@@ -24,9 +24,9 @@ disable_touchpad() {
 if ! [ -f "$STATUS_FILE" ]; then
     enable_touchpad
 else
-    if [ "$(cat $STATUS_FILE") = 'true'" ]; then
+    if [ "$(cat "$STATUS_FILE")" = 'true' ]; then
         disable_touchpad
-    elif [ $(cat "$STATUS_FILE") = "false" ]; then
+    elif [ "$(cat "$STATUS_FILE")" = 'false' ]; then
         enable_touchpad
     fi
 fi
