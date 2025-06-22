@@ -28,20 +28,27 @@ alias pacman='pacman --config ~/.pacman.conf '
 alias yay='yay --config ~/.pacman.conf '
 alias y='yay -S '
 alias yadd='yadm list | xargs yadm add '
-# Needed to make bash resolve aliases after the first one
-alias sudo='sudo '
 alias chrome='google-chrome-stable '
 alias i='yay -S'
 alias rp='sudo pacman -Runs '
 alias q='yay -Si'
+# Needed to make bash resolve aliases after sudo
+alias sudo='sudo '
 
 set -o vi
 
-workspace_id="_$(hyprctl activeworkspace | grep ID | head -1 | awk '{ print $3}')"
-window_id="-$(hyprctl activeworkspace | grep windows | awk '{ print $2}')"
-session_name="$USER$workspace_id$window_id"
-
 if [[ -x "$(command -v tmux)" ]] && [[ -n "${DISPLAY}" ]] && [[ -z "${TMUX}" ]]; then
+    workspace_id="$(hyprctl activeworkspace | grep ID | head -1 | awk '{ print $3}')"
+    window_id=$(("$(hyprctl activeworkspace | grep windows | awk '{ print $2}')"))
+    session_name="${USER}_${workspace_id}-${window_id}"
+
+    running_tmux_sessions=("$(bash -c 'tmux ls' | awk '{print $1}' | tr '\n' ' ')")
+
+    if [[ ${running_tmux_sessions[*]} =~ $session_name ]]; then
+        window_id=$((window_id + 1))
+        session_name="${USER}_${workspace_id}-${window_id}"
+    fi
+
     exec tmux new -A -s "$session_name " >/dev/null 2>&1
 fi
 
