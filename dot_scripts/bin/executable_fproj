@@ -19,6 +19,10 @@ chosen_project="$(
             --group-directories-first --icons {}'
 )"
 
+if [[ "${chosen_project:-}" = '' ]]; then
+    exit 1
+fi
+
 if [[ "${TMUX:-}" = '' ]]; then
     tmux
 fi
