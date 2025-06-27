@@ -8,6 +8,7 @@ PS1='[\u@\h \W]\$ '
 
 export TZ='Asia/Bishkek'
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH:$HOME/.scripts/bin"
+export PATH="$PATH:$HOME/.scripts/bin"
 export CDPATH=:$HOME/:$HOME/Projects/:$HOME/.config/:..
 export GOPATH=$HOME/.go
 export FZF_DEFAULT_OPTS="
@@ -42,7 +43,9 @@ if [[ -x "$(command -v tmux)" ]] && [[ -n "${DISPLAY}" ]] && [[ -z "${TMUX}" ]];
     window_id=$(("$(hyprctl activeworkspace | grep windows | awk '{ print $2}')"))
     session_name="${USER}_${workspace_id}-${window_id}"
 
-    running_tmux_sessions=("$(bash -c 'tmux ls' | awk '{print $1}' | tr '\n' ' ')")
+    if [[ ${TMUX} ]]; then
+        running_tmux_sessions=("$(bash -c 'tmux ls' | awk '{print $1}' | tr '\n' ' ')")
+    fi
 
     if [[ ${running_tmux_sessions[*]} =~ $session_name ]]; then
         window_id=$((window_id + 1))
