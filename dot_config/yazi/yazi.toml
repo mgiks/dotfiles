@@ -6,3 +6,5 @@ pdff = [
 rules = [
     {mime = "application/pdf", use = [ "pdff", "reveal" ] },
 ]
+[mgr]
+show_hidden=true
