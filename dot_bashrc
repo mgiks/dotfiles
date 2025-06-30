@@ -42,10 +42,7 @@ if [[ -x "$(command -v tmux)" ]] && [[ -n "${DISPLAY}" ]] && [[ -z "${TMUX}" ]];
     workspace_id="$(hyprctl activeworkspace | grep ID | head -1 | awk '{ print $3}')"
     window_id=$(("$(hyprctl activeworkspace | grep windows | awk '{ print $2}')"))
     session_name="${USER}_${workspace_id}-${window_id}"
-
-    if [[ ${TMUX} ]]; then
-        running_tmux_sessions=("$(bash -c 'tmux ls' | awk '{print $1}' | tr '\n' ' ')")
-    fi
+    running_tmux_sessions=("$(bash -c 'tmux ls' 2>/dev/null | awk '{print $1}' | tr '\n' ' ')")
 
     if [[ ${running_tmux_sessions[*]} =~ $session_name ]]; then
         window_id=$((window_id + 1))
