@@ -40,7 +40,10 @@ set -o vi
 
 if [[ -x "$(command -v tmux)" ]] && [[ -n "${DISPLAY}" ]] && [[ -z "${TMUX}" ]]; then
     workspace_id="$(hyprctl activeworkspace | grep ID | head -1 | awk '{ print $3}')"
-    window_id=$(("$(hyprctl activeworkspace | grep windows | awk '{ print $2}')"))
+    window_id="$(hyprctl clients -j |
+        jq '.[] | select(.initialTitle | contains("ghostty")) | .workspace.id' |
+        grep "$(hyprctl activeworkspace | grep ID | head -1 | awk '{ print $3}')" |
+        wc -l)"
     session_name="${USER}_${workspace_id}-${window_id}"
     running_tmux_sessions=("$(bash -c 'tmux ls' 2>/dev/null | awk '{print $1}' | tr '\n' ' ')")
 
