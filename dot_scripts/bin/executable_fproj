@@ -31,7 +31,14 @@ chosen_project_subfolders="$(echo "$project_list" | rg "$chosen_project.+" | tr 
 
 if [[ "${chosen_project_subfolders:-}" = '' ]]; then
     cd "$chosen_project" || exit 1
-    tmux neww nvim . \; selectw -t -n \; splitw -h \; selectp -t 1
+
+    split_orientation='-h'
+
+    if [ "$(tput cols)" -lt 95 ]; then
+        split_orientation='-v'
+    fi
+
+    tmux neww nvim . \; selectw -t -n \; splitw $split_orientation \; selectp -t 1
     exit 0
 fi
 
