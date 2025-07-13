@@ -1,3 +1,4 @@
+#! /usr/bin/env bash
 export colors_file="$HOME/.cache/wal/colors.tmux"
 export tmux_config_base="$HOME/.scripts/wal/config-bases/tmux-config-base"
 export tmux_config="$HOME/.config/tmux/tmux.conf"

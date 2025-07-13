@@ -1,4 +1,4 @@
-#!/bin/sh
+#! /usr/bin/env bash
 
 HYPRLAND_DEVICE="dell0a71:00-06cb:ce81-touchpad"
 HYPRLAND_VARIABLE="device[$HYPRLAND_DEVICE]:enabled"

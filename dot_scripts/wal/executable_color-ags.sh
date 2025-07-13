@@ -1,3 +1,4 @@
+#! /usr/bin/env bash
 cat "$HOME/.cache/wal/colors.scss" >"$HOME/.config/ags/utility-styles/_generated-colors.scss"
 
 . "/home/mgik/.cache/wal/colors.sh"
