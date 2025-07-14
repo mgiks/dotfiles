@@ -56,8 +56,6 @@ fi
 
 bind -x '"\C-f":"fproj"'
 
-sleep 0.1 && fastfetch
-
 . <(asdf completion bash)
 
 eval "$(starship init bash)"
