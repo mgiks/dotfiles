@@ -17,6 +17,7 @@ export FZF_DEFAULT_OPTS="
     --color info:7,prompt:2,spinner:1,pointer:232,marker:1
 "
 
+alias pn=pnpm
 alias wa='/home/mgik/.scripts/wal/wal.sh '
 alias rmpc='rmpc update; rmpc '
 alias wiki='wiki-tui '
