@@ -7,8 +7,8 @@
 PS1='[\u@\h \W]\$ '
 
 export TZ='Asia/Bishkek'
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH:$HOME/.scripts/bin"
-export PATH="$PATH:$HOME/.scripts/bin"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH:$HOME/.scripts/bin:$HOME/.local/bin/"
+# export PATH="$PATH:$HOME/.scripts/bin"
 export CDPATH=:$HOME/:$HOME/Projects/:$HOME/.config/:..
 export GOPATH=$HOME/.go
 export FZF_DEFAULT_OPTS="
@@ -60,3 +60,11 @@ bind -x '"\C-f":"fproj"'
 . <(asdf completion bash)
 
 eval "$(starship init bash)"
+
+# pnpm
+export PNPM_HOME="/home/mgik/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
