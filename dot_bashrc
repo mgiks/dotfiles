@@ -7,10 +7,11 @@
 PS1='[\u@\h \W]\$ '
 
 export TZ='Asia/Bishkek'
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH:$HOME/.scripts/bin:$HOME/.local/bin/"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH:$HOME/.scripts/bin:$HOME/.local/bin"
 # export PATH="$PATH:$HOME/.scripts/bin"
 export CDPATH=:$HOME/:$HOME/Projects/:$HOME/.config/:..
 export GOPATH=$HOME/.go
+export BROWSER=/usr/bin/librewolf
 export FZF_DEFAULT_OPTS="
     $FZF_DEFAULT_OPTS
     --color fg:7,bg:0,hl:1,fg+:232,bg+:1,hl+:255
