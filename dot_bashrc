@@ -7,7 +7,7 @@
 PS1='[\u@\h \W]\$ '
 
 export TZ='Asia/Bishkek'
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH:$HOME/.scripts/bin"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH:$HOME/.scripts/bin:$HOME/.local/bin"
 # export PATH="$PATH:$HOME/.scripts/bin"
 export CDPATH=:$HOME/:$HOME/Projects/:$HOME/.config/:..
 export GOPATH=$HOME/.go
