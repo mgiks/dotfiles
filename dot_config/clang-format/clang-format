@@ -4,4 +4,6 @@ ColumnLimit: '80'
 IndentWidth: '4'
 UseTab: Never
 AlignConsecutiveMacros: 'true'
+DerivePointerAlignment: false
+PointerAlignment: Right
 ...
