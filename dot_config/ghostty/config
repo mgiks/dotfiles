@@ -9,3 +9,7 @@ window-padding-x = 0
 window-padding-y = 0
 window-padding-balance = true
 keybind = ctrl+t=toggle_window_decorations
+cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor
+scrollback-limit = 1024
