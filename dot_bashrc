@@ -36,25 +36,25 @@ alias sudo='sudo '
 
 set -o vi
 
-if [[ -x "$(command -v tmux)" ]] && [[ -n "${DISPLAY}" ]] && [[ -z "${TMUX}" ]]; then
-    workspace_id="$(hyprctl activeworkspace | grep ID | head -1 | awk '{ print $3}')"
-    window_id="$(
-        hyprctl clients -j |
-            jq '.[] | select(.initialTitle | contains("ghostty")) | .workspace.id' |
-            grep -c "$(hyprctl activeworkspace | grep ID | head -1 | awk '{ print $3}')"
-    )"
-    session_name="${USER}_${workspace_id}-${window_id}"
-    running_tmux_sessions=("$(bash -c 'tmux ls' 2>/dev/null | awk '{print $1}' | tr '\n' ' ')")
+# if [[ -x "$(command -v tmux)" ]] && [[ -n "${DISPLAY}" ]] && [[ -z "${TMUX}" ]]; then
+#     workspace_id="$(hyprctl activeworkspace | grep ID | head -1 | awk '{ print $3}')"
+#     window_id="$(
+#         hyprctl clients -j |
+#             jq '.[] | select(.initialTitle | contains("ghostty")) | .workspace.id' |
+#             grep -c "$(hyprctl activeworkspace | grep ID | head -1 | awk '{ print $3}')"
+#     )"
+#     session_name="${USER}_${workspace_id}-${window_id}"
+#     running_tmux_sessions=("$(bash -c 'tmux ls' 2>/dev/null | awk '{print $1}' | tr '\n' ' ')")
+#
+#     if [[ ${running_tmux_sessions[*]} =~ $session_name ]]; then
+#         window_id=$((window_id + 1))
+#         session_name="${USER}_${workspace_id}-${window_id}"
+#     fi
+#
+#     exec tmux new -A -s "$session_name " >/dev/null 2>&1
+# fi
 
-    if [[ ${running_tmux_sessions[*]} =~ $session_name ]]; then
-        window_id=$((window_id + 1))
-        session_name="${USER}_${workspace_id}-${window_id}"
-    fi
-
-    exec tmux new -A -s "$session_name " >/dev/null 2>&1
-fi
-
-bind -x '"\C-f":"fproj"'
+bind -x '"\C-f":"supafind"'
 
 . <(asdf completion bash)
 
