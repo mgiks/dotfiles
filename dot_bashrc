@@ -8,10 +8,10 @@ PS1='[\u@\h \W]\$ '
 
 export TZ='Asia/Bishkek'
 export MANPAGER="nvim +Man!"
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH:$HOME/.scripts/bin:$HOME/.local/bin"
+export GOPATH=$HOME/.go
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH:$HOME/.scripts/bin:$HOME/.local/bin:$GOROOT/bin:$GOPATH/bin"
 # export PATH="$PATH:$HOME/.scripts/bin"
 export CDPATH=:$HOME/:$HOME/Projects/:$HOME/.config/:..
-export GOPATH=$HOME/.go
 export BROWSER=/usr/bin/librewolf
 export FZF_DEFAULT_OPTS="
     $FZF_DEFAULT_OPTS
