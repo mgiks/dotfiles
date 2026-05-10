@@ -59,9 +59,12 @@ set -o vi
 bind -x '"\C-f":"supafind"'
 
 . <(asdf completion bash)
+. ${ASDF_DATA_DIR:-$HOME/.asdf}/plugins/golang/set-env.bash
 
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 eval "$(starship init bash)"
+
+eval "$(direnv hook bash)"
 
 # pnpm
 export PNPM_HOME="/home/mgik/.local/share/pnpm"
