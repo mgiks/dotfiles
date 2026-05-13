@@ -8,7 +8,6 @@ PS1='[\u@\h \W]\$ '
 
 export TZ='Asia/Bishkek'
 export MANPAGER="nvim +Man!"
-export GOPATH=$HOME/.go
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH:$HOME/.scripts/bin:$HOME/.local/bin:$GOROOT/bin:$GOPATH/bin"
 # export PATH="$PATH:$HOME/.scripts/bin"
 export CDPATH=:$HOME/:$HOME/Projects/:$HOME/.config/:..
@@ -19,6 +18,14 @@ export FZF_DEFAULT_OPTS="
     --color info:7,prompt:2,spinner:1,pointer:232,marker:1
 "
 export ultwear='88:92:CC:A8:A1:81'
+
+# golang stuff
+export GOPATH=$HOME/.go
+
+export GOROOT_REF=$GOROOT
+export GOPATH_REF=$GOPATH
+export GOBIN_REF=$GOBIN
+# golang stuff end
 
 alias pn=pnpm
 alias wa='/home/mgik/.scripts/wal/wal.sh '
@@ -35,6 +42,10 @@ alias y='yay -S '
 alias rp='sudo pacman -Runs '
 # Needed to make bash resolve aliases after sudo
 alias sudo='sudo '
+
+function cd() {
+    builtin cd "$@" && . "$HOME/.scripts/asdf/set_go_envs.bash"
+}
 
 set -o vi
 
@@ -59,7 +70,6 @@ set -o vi
 bind -x '"\C-f":"supafind"'
 
 . <(asdf completion bash)
-. ${ASDF_DATA_DIR:-$HOME/.asdf}/plugins/golang/set-env.bash
 
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 eval "$(starship init bash)"
