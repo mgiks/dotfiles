@@ -1,0 +1,10 @@
+max-history=3
+font=JetBrains Mono NerdFont 10
+background-color=#00000080
+sort=-time
+border-size=1
+border-color=#FFFFFFFF
+icon-path=/home/mgik/Icons/
+default-timeout=1000
+max-visible=3
+layer=overlay
