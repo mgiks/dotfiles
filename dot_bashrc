@@ -13,7 +13,6 @@ export GOROOT_REF=$GOROOT
 export GOPATH_REF=$GOPATH
 export GOBIN_REF=$GOBIN
 # golang stuff end
-
 export TZ='Asia/Bishkek'
 export MANPAGER="nvim +Man!"
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH:$HOME/.scripts/bin:$HOME/.local/bin:$GOROOT/bin:$GOPATH/bin"
@@ -26,6 +25,8 @@ export FZF_DEFAULT_OPTS="
     --color info:7,prompt:2,spinner:1,pointer:232,marker:1
 "
 export ultwear='88:92:CC:A8:A1:81'
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_CONFIG_HOME=$HOME/.config
 
 alias pn=pnpm
 alias wa='/home/mgik/.scripts/wal/wal.sh '
