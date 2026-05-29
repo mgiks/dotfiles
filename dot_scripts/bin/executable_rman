@@ -1,2 +1,0 @@
-#! /usr/bin/env bash
-man "$(man -k . | awk '{print $1 $2}' | rg '\(1\)$' | sed 's:...$::' | shuf | head -n1)"

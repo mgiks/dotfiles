@@ -1,4 +1,0 @@
-#! /usr/bin/env bash
-program="$1"
-
-$program --help | less
