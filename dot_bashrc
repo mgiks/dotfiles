@@ -50,6 +50,8 @@ function cd() {
     builtin cd "$@" && . "$HOME/.scripts/asdf/set_go_envs.bash"
 }
 
+. $HOME/.scripts/asdf/set_go_envs.bash
+
 set -o vi
 
 # if [[ -x "$(command -v tmux)" ]] && [[ -n "${DISPLAY}" ]] && [[ -z "${TMUX}" ]]; then
